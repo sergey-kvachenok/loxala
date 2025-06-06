@@ -1,8 +1,7 @@
-import type { ComponentType } from 'react';
-import type { IconProps } from '../../../icons/types';
+import type { ReactNode } from 'react';
 
 export interface SecondaryButtonProps {
-  icon: ComponentType<IconProps>;
+  icon: ReactNode;
   text: string;
   onClick: () => void;
   size?: 'sm' | 'md' | 'lg';

@@ -25,7 +25,7 @@ const iconComponentName = `${baseName}Icon`;
 const folderName = baseName;
 
 // Define path to icon
-const iconsPath = 'src/ui/icons';
+const iconsPath = 'src/shared/ui/icons';
 const iconPath = path.join(iconsPath, folderName);
 
 // Create directory if it doesn't exist

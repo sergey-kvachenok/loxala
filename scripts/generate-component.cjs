@@ -26,7 +26,7 @@ if (!componentName) {
 }
 
 // Define path to component
-const basePath = 'src/ui/components';
+const basePath = 'src/shared/ui/components';
 const fullPath = componentPath
   ? path.join(basePath, componentPath, componentName)
   : path.join(basePath, componentName);

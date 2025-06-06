@@ -1,10 +1,8 @@
-import type { ComponentType } from 'react';
-import type { IconProps } from '../../icons/types';
+import type { ReactNode } from 'react';
 
 export interface ChipProps {
-  text: string;
+  text: string | number;
   variant: 'square' | 'rounded';
-  icon?: ComponentType<IconProps>;
+  icon?: ReactNode;
   className?: string;
-  iconColor?: string;
 }

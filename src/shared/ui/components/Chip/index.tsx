@@ -3,10 +3,9 @@ import type { ChipProps } from './types';
 
 export const Chip: FC<ChipProps> = ({
   variant = 'square',
-  icon: Icon,
+  icon,
   className,
   text,
-  iconColor,
 }) => {
   if (variant === 'square') {
     return (
@@ -19,8 +18,10 @@ export const Chip: FC<ChipProps> = ({
   }
 
   return (
-    <span className="bg-white/10 inline-flex items-center justify-center gap-1 backdrop-blur-chip rounded-[45px] px-[11px] py-[8px] text-white font-semibold">
-      {Icon && <Icon color={iconColor} />}
+    <span
+      className={`bg-white/10 inline-flex items-center justify-center gap-1 backdrop-blur-chip rounded-[45px] px-2.75 py-2 text-white font-semibold ${className}`}
+    >
+      {icon && icon}
       <span className="text-11">{text}</span>
     </span>
   );
