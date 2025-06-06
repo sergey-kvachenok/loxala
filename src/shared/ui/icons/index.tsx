@@ -1,0 +1,9 @@
+export { LoxalaLogo } from './LoxalaLogo';
+export { MessageIcon } from './Message';
+export { HeartIcon } from './Heart';
+export { LampIdeaIcon } from './LampIdea';
+export { PlusIcon } from './Plus';
+export { ShareIcon } from './Share';
+export { DotsThreeVerticalIcon } from './DotsThreeVertical';
+export { ChevronDownIcon } from './ChevronDown';
+export { LoxalaIcon } from './Loxala';
