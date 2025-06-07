@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import 'tailwindcss';
-@import './assets/fonts/AktivGrotesk.css';
+@import './shared/lib/fonts/AktivGrotesk.css';
 
 @theme {
   /* Breakpoints */
@@ -21,39 +21,20 @@
 
   /* Gradients */
   --gradient-button: linear-gradient(180deg, #b55dd9 0.01%, #5054c9 100%);
-  --gradient-border: linear-gradient(180deg, #b55dd9 0.01%, #5054c9 100%);
-  /* --gradient-border-hover: linear-gradient(180deg, #ac49d4 0.01%, #3a3ebb 100%); */
-  /* 
-  Shadows
-  --shadow-button: 0px 4px 4px 0px rgba(0, 0, 0, 0.17);
-  --shadow-inset: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.15); */
-
-  /* Avatar Sizes */
-  --size-avatar-sm: 32px;
-  --size-avatar-md: 48px;
-  --size-avatar-lg: 64px;
-  --size-avatar-xl: 80px;
 
   /* Fonts */
   --font-family-aktiv-grotesk: 'AktivGrotesk', system-ui, sans-serif;
   --font-family-open-sans: 'Open Sans', system-ui, sans-serif;
 
-  /* Typography - шкала с 16px как базовый размер + кастомные размеры */
-  --text-9: 0.625rem; /* 10px */
+  /* Typography */
   --text-11: 0.75rem; /* 12px */
   --text-xs: 0.75rem; /* 12px */
-  --text-13: 0.8125rem; /* 13px */
   --text-sm: 0.875rem; /* 14px */
   --text-14: 0.875rem; /* 14px */
   --text-15: 0.9375rem; /* 15px */
-  --text-base: 1rem; /* 16px - ДЕФОЛТ */
-
-  --text-lg: 1.125rem; /* 18px */
+  --text-base: 1rem; /* 16px */
   --text-xl: 1.25rem; /* 20px */
   --text-2xl: 1.5rem; /* 24px */
-  --text-3xl: 1.875rem; /* 30px */
-  --text-4xl: 2.25rem; /* 36px */
-  --text-5xl: 3rem; /* 48px */
 }
 
 @utility container {

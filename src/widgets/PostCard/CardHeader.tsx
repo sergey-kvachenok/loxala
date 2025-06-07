@@ -1,8 +1,6 @@
 import type { FC } from 'react';
 import type { CardHeaderProps } from './types';
 import { DotsThreeVerticalIcon, PlusIcon, ShareIcon } from '@/shared/ui/icons';
-import { DotDivider } from '@/shared/ui/components/DotDivider';
-import { getTimeAgo } from '@/shared/lib/time';
 import { IconButton, SecondaryButton } from '@/shared/ui/components/buttons';
 import { AuthorInfo } from './AuthorInfo';
 
@@ -16,7 +14,8 @@ export const CardHeader: FC<CardHeaderProps> = ({
       <AuthorInfo
         avatarSrc={avatarSrc}
         author={author}
-        className="hidden max-mobile:flex md:flex lg:hidden"
+        className="hidden max-mobile:flex md:flex lg:hidden mb-2"
+        date={date}
       />
 
       <div className="flex md:gap-4 lg:gap-0 justify-between max-mobile:justify-end md:justify-end lg:justify-between">
@@ -25,9 +24,8 @@ export const CardHeader: FC<CardHeaderProps> = ({
             avatarSrc={avatarSrc}
             author={author}
             className="max-mobile:hidden md:hidden lg:flex"
+            date={date}
           />
-          <DotDivider className="mx-2 2xl:mx-3.5 max-mobile:hidden md:hidden lg:block" />
-          <span className="text-14">{getTimeAgo(date)}</span>
         </div>
 
         <div className="flex items-center gap-1.75">

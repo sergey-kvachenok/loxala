@@ -2,7 +2,10 @@ import type { FC } from 'react';
 import type { ProfileCardProps } from './types';
 import { Avatar } from '@/shared/ui/components/Avatar';
 import { LoxalaIcon, MessageIcon } from '@/shared/ui/icons';
-import { RoundIconButton } from '@/shared/ui/components/buttons';
+import {
+  GradientButton,
+  RoundIconButton,
+} from '@/shared/ui/components/buttons';
 import { Statistic } from '@/shared/ui/components/Statistic';
 import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 
@@ -18,11 +21,21 @@ export const ProfileCard: FC<ProfileCardProps> = ({
 
   return (
     <section className="flex p-6 gap-4.5 border border-light-grey-stroke rounded-lg">
-      <Avatar
-        src={avatarSrc}
-        size="lg"
-        className="max-mobile:hidden mobile:block"
-      />
+      <div className="relative max-mobile:hidden mobile:block">
+        <Avatar src={avatarSrc} size="lg" />
+
+        <span className="absolute bottom-0 right-1 w-11 h-11">
+          <GradientButton
+            onClick={() => {
+              console.log('Gradient button clicked');
+            }}
+          >
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold text-[18px] leading-none">
+              +
+            </span>
+          </GradientButton>
+        </span>
+      </div>
 
       <div className="flex flex-col justify-between flex-1">
         <div className="flex justify-between items-center">

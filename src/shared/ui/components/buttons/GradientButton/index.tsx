@@ -1,16 +1,49 @@
-export const GradientButton = () => {
+import type { FC } from 'react';
+import type { GradientButtonProps } from './types';
+
+export const GradientButton: FC<GradientButtonProps> = ({
+  onClick,
+  children,
+  className,
+}) => {
   return (
-    <div className="w-[40px] h-[40px] px-4 py-3 relative bg-gradient-button shadow-button rounded-full justify-center items-center gap-2 inline-flex">
-      {/* Plus icon */}
-      {/* <div className="text-white text-[28px] font-open-sans font-semibold">
-        +
-      </div> */}
+    <button
+      className={`relative w-[44px] h-[44px] ${className}`}
+      onClick={onClick}
+    >
+      <button
+        className="absolute top-0 left-1 w-11 h-11 rounded-full border-0 outline-none cursor-pointer transition-transform duration-200 ease-in-out hover:scale-102 active:scale-95"
+        style={{
+          background: 'linear-gradient(180deg, #B55DD9 0.01%, #5054C9 100%)',
+          boxShadow: '0 4px 4px rgba(0, 0, 0, 0.17)',
+        }}
+      >
+        {children}
+      </button>
 
-      {/* Glossy highlight border */}
-      {/* <div className="w-[90%] h-[90%] absolute rounded-full border-2 border-[#FDE7FC] blur-[0.39px]" /> */}
+      <div
+        className="absolute top-[3px] left-[7px] w-[38px] h-[38px] rounded-full border-2 border-transparent pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(180deg, #FDE7FC 0%, #B87DDE 16.1458%, #6E50D1 85.4167%, #3E37B4 100%) border-box',
+          backgroundClip: 'border-box',
+          filter: 'blur(0.394531px)',
+          WebkitMask:
+            'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'exclude',
+          mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+          maskComposite: 'exclude',
+        }}
+      />
 
-      {/* Glossy highlight overlay */}
-      <div className="w-3 h-4 left-[35%] top-1 absolute mix-blend-overlay bg-gradient-to-b from-white/56 to-white/9 rounded-[90px]" />
-    </div>
+      <div
+        className="absolute top-1.25 left-5 w-3 h-4 rounded-md pointer-events-none opacity-60 z-[2]"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.15) 100%)',
+          mixBlendMode: 'overlay',
+        }}
+      />
+    </button>
   );
 };

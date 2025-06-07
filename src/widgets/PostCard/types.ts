@@ -7,11 +7,10 @@ export interface AuthorInfoProps {
   avatarSrc: string;
   author: string;
   className?: string;
-}
-
-export interface CardHeaderProps extends Omit<AuthorInfoProps, 'className'> {
   date: string;
 }
+
+export type CardHeaderProps = Omit<AuthorInfoProps, 'className'>;
 
 export interface CardFooterProps {
   tags: Tag[];

@@ -1,57 +1,55 @@
-# Генераторы
+# Generators
 
-Скрипты для автоматической генерации новых React компонентов и иконок в проекте.
+Scripts for automatic generation of new React components and icons in the project.
 
-## Генератор компонентов
+## Component Generator
 
-## Использование
-
-### Через npm скрипты (рекомендуется):
+## Usage
 
 ```bash
-# Создать простой компонент
+# Create a simple component
 npm run generate:component <ComponentName>
 
-# Создать компонент с отдельным файлом типов
+# Create a component with separate types file
 npm run generate:component:types <ComponentName>
 ```
 
-### Прямое использование:
+### Direct usage:
 
 ```bash
-# Простой компонент
+# Simple component
 node scripts/generate-component.js <ComponentName>
 
-# Компонент с типами в отдельном файле
+# Component with types in separate file
 node scripts/generate-component.js <ComponentName> --types
 
-# Компонент в указанной подпапке
+# Component in specified subfolder
 node scripts/generate-component.js <ComponentName> --path=subfolder
 ```
 
-## Примеры
+## Examples
 
 ```bash
-# Создать простой компонент Button
+# Create simple Button component
 npm run generate:component Button
 
-# Создать компонент Modal с отдельным файлом типов
+# Create Modal component with separate types file
 npm run generate:component:types Modal
 
-# Создать компонент Card в папке cards
+# Create Card component in cards folder
 node scripts/generate-component.js Card --types --path=cards
 ```
 
-## Структура создаваемых компонентов
+## Generated component structure
 
-### Простой компонент:
+### Simple component:
 
 ```
 src/ui/components/ComponentName/
 ├── index.tsx
 ```
 
-### Компонент с типами:
+### Component with types:
 
 ```
 src/ui/components/ComponentName/
@@ -59,77 +57,75 @@ src/ui/components/ComponentName/
 └── types.ts
 ```
 
-## Шаблоны
+## Templates
 
-### Простой компонент (без --types):
+### Simple component (without --types):
 
-- Создается только `index.tsx`
-- Типы определены в самом компоненте
-- Подходит для простых компонентов
+- Only `index.tsx` is created
+- Types are defined in the component itself
+- Suitable for simple components
 
-### Компонент с типами (с --types):
+### Component with types (with --types):
 
-- Создается `index.tsx` и `types.ts`
-- Типы выносятся в отдельный файл
-- Подходит для сложных компонентов с множеством типов
+- Creates `index.tsx` and `types.ts`
+- Types are extracted to separate file
+- Suitable for complex components with multiple types
 
-## Опции
+## Options
 
-- `--types` - создать отдельный файл типов
-- `--path=folder/path` - создать компонент в указанной подпапке
+- `--types` - create separate types file
+- `--path=folder/path` - create component in specified subfolder
 
-После создания компонента не забудьте добавить его экспорт в соответствующий index.tsx файл при необходимости.
+After creating a component, don't forget to add its export to the corresponding index.tsx file if needed.
 
-## Генератор иконок
+## Icon Generator
 
-### Через npm скрипт (рекомендуется):
+### Via npm script (recommended):
 
 ```bash
-# Создать иконку с параметрами по умолчанию
+# Create icon with default parameters
 npm run generate:icon <IconName>
 ```
 
-### Прямое использование:
+### Direct usage:
 
 ```bash
-# Создать иконку с параметрами по умолчанию
+# Create icon with default parameters
 node scripts/generate-icon.cjs <IconName>
 
-# Создать иконку с кастомными параметрами
+# Create icon with custom parameters
 node scripts/generate-icon.cjs <IconName> --size=24 --color=#000000
 ```
 
-### Примеры:
+### Examples:
 
 ```bash
-# Создать иконку HomeIcon
+# Create HomeIcon
 npm run generate:icon HomeIcon
 
-# Создать иконку с размером 24px и черным цветом
+# Create icon with 24px size and black color
 node scripts/generate-icon.cjs ArrowIcon --size=24 --color=#000000
 
-# Создать иконку с синим цветом
+# Create icon with blue color
 node scripts/generate-icon.cjs StarIcon --color=#3B82F6
 ```
 
-### Структура создаваемых иконок:
+### Generated icon structure:
 
 ```
 src/ui/icons/IconName/
 ├── index.tsx
 ```
 
-### Особенности:
+### Features:
 
-- Автоматически добавляет "Icon" к имени если отсутствует
-- Создает папку без "Icon" суффикса (например, `Home` для `HomeIcon`)
-- Автоматически добавляет экспорт в `src/ui/icons/index.tsx`
-- Использует шаблон с placeholder SVG контентом
-- Поддерживает кастомные размеры и цвета
+- Automatically adds "Icon" to name if missing
+- Creates folder without "Icon" suffix (e.g., `Home` for `HomeIcon`)
+- Automatically adds export to `src/ui/icons/index.tsx`
+- Uses template with placeholder SVG content
+- Supports custom sizes and colors
 
-### Опции:
+### Options:
 
-- `--size=<number>` - размер иконки (по умолчанию: 16)
-- `--color=<hex>` - цвет по умолчанию (по умолчанию: #7A58D0)
-
-После создания иконки замените placeholder SVG контент на реальные пути вашей иконки.
+- `--size=<number>` - icon size (default: 16)
+- `--color=<hex>` - default color (default: '')
