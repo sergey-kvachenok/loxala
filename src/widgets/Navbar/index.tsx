@@ -1,16 +1,10 @@
+import { useState } from 'react';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { LoxalaLogo } from '@/shared/ui/icons';
-
-interface MenuItem {
-  label: string;
-  href: string;
-}
-
-interface MenuItems {
-  left: MenuItem[];
-  right: MenuItem[];
-}
+import { LoxalaLogo, HamburgerIcon } from '@/shared/ui/icons';
+import { MobileMenu } from '@/widgets/Navbar/MobileMenu';
+import type { MenuItems } from './types';
+import { IconButton } from '@/shared/ui/components/buttons';
 
 const menuItems: MenuItems = {
   left: [
@@ -40,28 +34,49 @@ const menuItems: MenuItems = {
   ],
 };
 
+const allMenuItems = [...menuItems.left, ...menuItems.right];
+
 export const Navbar: FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <nav className="flex items-center justify-between font-family-aktiv-grotesk text-grey/80 py-10 px-5 xl:px-10 2xl:px-20 border-b border-light-grey-stroke">
-      <Link to="/">
-        <LoxalaLogo />
-      </Link>
+    <>
+      <nav className="flex items-center justify-between font-family-aktiv-grotesk text-grey/80 py-10 px-5 xl:px-10 2xl:px-20 border-b border-light-grey-stroke">
+        <Link to="/">
+          <LoxalaLogo />
+        </Link>
 
-      <div className="flex items-center gap-10">
-        {menuItems.left.map((item) => (
-          <Link key={item.label} to={item.href} className="text-15">
-            {item.label}
-          </Link>
-        ))}
-      </div>
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-10">
+          {menuItems.left.map((item) => (
+            <Link key={item.label} to={item.href} className="text-15">
+              {item.label}
+            </Link>
+          ))}
+        </div>
 
-      <div className="flex items-center gap-10">
-        {menuItems.right.map((item) => (
-          <Link key={item.label} to={item.href} className="text-15">
-            {item.label}
-          </Link>
-        ))}
-      </div>
-    </nav>
+        <div className="hidden lg:flex items-center gap-10">
+          {menuItems.right.map((item) => (
+            <Link key={item.label} to={item.href} className="text-15">
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu */}
+        <IconButton
+          icon={<HamburgerIcon size={24} />}
+          className="lg:hidden p-2"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="Open menu"
+        />
+      </nav>
+
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        menuItems={allMenuItems}
+      />
+    </>
   );
 };

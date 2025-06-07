@@ -22,7 +22,7 @@ export const MessageIcon: FC<IconProps> = ({
       <path
         d="M5.30469 7.93725H11.4519M5.30469 5.30273H11.4519"
         stroke={color}
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );

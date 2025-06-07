@@ -39,7 +39,7 @@ const Dashboard = () => {
         <p className="font-bold text-xl mb-4">Baron’s Posts</p>
         <div className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-col gap-4">
           {POSTS_DATA.map((post) => (
-            <PostCard {...post} />
+            <PostCard {...post} key={post.id} />
           ))}
         </div>
       </section>

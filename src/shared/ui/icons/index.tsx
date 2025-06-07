@@ -4,6 +4,7 @@ export { HeartIcon } from './Heart';
 export { LampIdeaIcon } from './LampIdea';
 export { PlusIcon } from './Plus';
 export { ShareIcon } from './Share';
+export { HamburgerIcon } from './HamburgerIcon';
 export { DotsThreeVerticalIcon } from './DotsThreeVertical';
 export { ChevronDownIcon } from './ChevronDown';
 export { LoxalaIcon } from './Loxala';

@@ -32,6 +32,7 @@ export const POSTS_DATA = [
     author: 'Thomas Gordon',
     imageSrc: post1Image,
     avatarSrc: avatar,
+    id: 1,
   },
 
   {
@@ -61,6 +62,7 @@ export const POSTS_DATA = [
     author: 'Thomas Gordon',
     imageSrc: post2Image,
     avatarSrc: avatar,
+    id: 2,
   },
 ];
 

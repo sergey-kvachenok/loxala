@@ -11,7 +11,7 @@ export const GradientButton: FC<GradientButtonProps> = ({
       className={`relative w-[44px] h-[44px] ${className}`}
       onClick={onClick}
     >
-      <button
+      <div
         className="absolute top-0 left-1 w-11 h-11 rounded-full border-0 outline-none cursor-pointer transition-transform duration-200 ease-in-out hover:scale-102 active:scale-95"
         style={{
           background: 'linear-gradient(180deg, #B55DD9 0.01%, #5054C9 100%)',
@@ -19,7 +19,7 @@ export const GradientButton: FC<GradientButtonProps> = ({
         }}
       >
         {children}
-      </button>
+      </div>
 
       <div
         className="absolute top-[3px] left-[7px] w-[38px] h-[38px] rounded-full border-2 border-transparent pointer-events-none"

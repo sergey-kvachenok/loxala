@@ -5,10 +5,11 @@ export const IconButton: FC<IconButtonProps> = ({
   icon,
   onClick,
   disabled = false,
+  className,
 }) => {
   return (
     <button
-      className={`flex items-center justify-center  ${disabled ? 'cursor-initial' : 'cursor-pointer'}`}
+      className={`flex items-center justify-center  ${disabled ? 'cursor-initial' : 'cursor-pointer'} ${className}`}
       onClick={onClick}
       disabled={disabled}
     >

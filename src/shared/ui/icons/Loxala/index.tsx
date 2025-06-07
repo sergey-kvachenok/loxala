@@ -60,8 +60,8 @@ export const LoxalaIcon: FC<IconProps> = ({
           y2="17.7465"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.0001" stop-color="#B55DD9" />
-          <stop offset="1" stop-color="#5054C9" />
+          <stop offset="0.0001" stopColor="#B55DD9" />
+          <stop offset="1" stopColor="#5054C9" />
         </linearGradient>
       </defs>
     </svg>
