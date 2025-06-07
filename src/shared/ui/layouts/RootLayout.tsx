@@ -4,10 +4,7 @@ import { Navbar } from '@/widgets/Navbar';
 
 const RootLayout: React.FC = () => {
   return (
-    <div
-      className="flex flex-col"
-      style={{ height: '100dvh', minHeight: '100vh' }}
-    >
+    <div className="flex flex-col" style={{ height: '100dvh' }}>
       <div className="container">
         <Navbar />
       </div>

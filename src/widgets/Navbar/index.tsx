@@ -41,7 +41,7 @@ export const Navbar: FC = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between font-family-aktiv-grotesk text-grey/80 py-10 px-5 xl:px-10 2xl:px-20 border-b border-light-grey-stroke">
+      <nav className="flex items-center justify-between font-family-aktiv-grotesk text-grey/80 max-md:py-5 md:py-10 max-sm:px-5 sm:px-5 xl:px-10 2xl:px-20 border-b border-light-grey-stroke">
         <Link to="/">
           <LoxalaLogo />
         </Link>
