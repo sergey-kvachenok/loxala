@@ -17,7 +17,7 @@ export const AuthorInfo: FC<AuthorInfoProps> = ({
       <span className="font-semibold mr-1.75">{author}</span>
       <LoxalaIcon />
       <DotDivider className="mx-2 2xl:mx-3.5" />
-      <span className="text-14">{getTimeAgo(date)}</span>
+      <span className="text-sm">{getTimeAgo(date)}</span>
     </div>
   );
 };

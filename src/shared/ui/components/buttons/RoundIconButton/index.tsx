@@ -3,14 +3,14 @@ import type { RoundIconButtonProps } from './types';
 
 const sizes = {
   sm: {
-    className: 'w-[24px] h-[24px]',
+    className: 'w-[26px] h-[26px]',
   },
   md: {
-    className: 'w-[32px] h-[32px]',
+    className: 'w-[34px] h-[34px]',
   },
 
   lg: {
-    className: 'w-[44px] h-[44px]',
+    className: 'w-[46px] h-[46px]',
   },
 };
 

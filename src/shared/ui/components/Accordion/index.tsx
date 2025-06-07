@@ -11,10 +11,10 @@ export const Accordion: FC<AccordionProps> = ({ title, children }) => {
 
   return (
     <button
-      className="gap-4 px-6 py-5.5 border border-light-grey-stroke rounded-lg cursor-pointer"
+      className="gap-4 py-5.5 border border-light-grey-stroke rounded-lg cursor-pointer"
       onClick={toggleExpanded}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-6">
         <div className="relative">
           <span className="text-xl font-bold">{title}</span>
           <span
@@ -39,7 +39,7 @@ export const Accordion: FC<AccordionProps> = ({ title, children }) => {
           isExpanded ? 'opacity-100 mt-4' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="text-left max-h-[150px] overflow-y-auto border-t pt-2 border-light-grey-stroke">
+        <div className="text-left max-h-[150px] overflow-y-auto border-t pt-2 px-6 border-light-grey-stroke">
           {children}
         </div>
       </div>

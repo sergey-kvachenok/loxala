@@ -45,7 +45,7 @@ export const CardFooter: FC<CardFooterProps> = ({
         ) : null}
       </div>
 
-      <div className="text-white line-clamp-2 max-mobile:line-clamp-3 max-mobile:text-11 sm:text-sm lg:text-base mb-4.5">
+      <div className="text-white line-clamp-2 max-mobile:line-clamp-3 max-sm:text-11 max-lg:text-sm lg:text-base mb-4.5 leading-snug">
         {text}
       </div>
 

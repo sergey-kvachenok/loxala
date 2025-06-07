@@ -27,10 +27,10 @@
   --font-family-open-sans: 'Open Sans', system-ui, sans-serif;
 
   /* Typography */
-  --text-11: 0.75rem; /* 12px */
+  --text-9: 0.5625rem; /* 9px */
+  --text-11: 0.6875rem; /* 11px */
   --text-xs: 0.75rem; /* 12px */
   --text-sm: 0.875rem; /* 14px */
-  --text-14: 0.875rem; /* 14px */
   --text-15: 0.9375rem; /* 15px */
   --text-base: 1rem; /* 16px */
   --text-xl: 1.25rem; /* 20px */
@@ -58,8 +58,31 @@
 }
 
 @layer base {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
     font-family: var(--font-family-open-sans);
     color: var(--color-black);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f6f3fc;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-button);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a347c7 0.01%, #4048b5 100%);
   }
 }

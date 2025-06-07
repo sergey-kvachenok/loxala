@@ -1,15 +1,12 @@
-import { HEADER_HEIGHT, POSTS_DATA, PROFILE_DATA } from '@/shared/constants';
+import { POSTS_DATA, PROFILE_DATA } from '@/shared/constants';
 import { PostCard } from '@/widgets/PostCard';
 import { ProfileCard } from '@/widgets/ProfileCard';
 import { Accordion } from '@/shared/ui/components/Accordion';
 
 const Dashboard = () => {
   return (
-    <main
-      className="grid lg:grid-cols-[minmax(auto,522px)_minmax(auto,738px)] gap-5 py-6 px-5 xl:px-10 2xl:px-20 overflow-y-auto"
-      style={{ height: `calc(100dvh - ${HEADER_HEIGHT}px)` }}
-    >
-      <div className="flex flex-col gap-5">
+    <main className="grid lg:grid-cols-[minmax(auto,522px)_minmax(auto,738px)] gap-5 py-6 px-5 xl:px-10 2xl:px-20">
+      <section className="flex flex-col gap-5">
         <ProfileCard {...PROFILE_DATA} />
         <Accordion title="About">
           <>
@@ -33,7 +30,7 @@ const Dashboard = () => {
             interdum, nunc non blandit.
           </>
         </Accordion>
-      </div>
+      </section>
 
       <section>
         <p className="font-bold text-xl mb-4">Baron’s Posts</p>

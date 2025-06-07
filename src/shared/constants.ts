@@ -2,14 +2,12 @@ import post1Image from '@images/post1.jpg';
 import post2Image from '@images/post2.jpg';
 import avatar from '@images/avatar.png';
 
-export const HEADER_HEIGHT = 121;
-
 export const POSTS_DATA = [
   {
     tags: [
       {
-        id: 'tip',
-        name: 'Tip',
+        id: 'tips',
+        name: 'Tips',
       },
       {
         id: 'uidesign',
@@ -38,8 +36,8 @@ export const POSTS_DATA = [
   {
     tags: [
       {
-        id: 'tip',
-        name: 'Tip',
+        id: 'tips',
+        name: 'Tips',
       },
       {
         id: 'uidesign',

@@ -41,7 +41,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-1.5">
-              <p className="max-mobile:text-xl text-2xl font-family-aktiv-grotesk leading-[22px]">
+              <p className="max-mobile:text-xl text-2xl font-family-aktiv-grotesk leading-[24px]">
                 {name}
               </p>
               <LoxalaIcon size={24} />
