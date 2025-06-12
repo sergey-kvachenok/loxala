@@ -8,13 +8,12 @@ const args = process.argv.slice(2);
 const iconName = args.find((arg) => !arg.startsWith('--'));
 
 if (!iconName) {
-  console.error('❌ Ошибка: Необходимо указать имя иконки');
+  console.error('❌ Error: Necessary to give the icon name');
   console.log(
-    'Использование: node scripts/generate-icon.cjs <IconName> [--size=16] [--color=#7A58D0]',
+    'Usage: node scripts/generate-icon.cjs <IconName> [--size=16] [--color=#7A58D0]',
   );
-  console.log('Пример: node scripts/generate-icon.cjs HomeIcon');
   console.log(
-    'Пример: node scripts/generate-icon.cjs ArrowIcon --size=24 --color=#000000',
+    'Example: node scripts/generate-icon.cjs ArrowIcon --size=24 --color=#000000',
   );
   process.exit(1);
 }
@@ -38,7 +37,7 @@ const iconTemplate = `import type { FC } from 'react';
 import type { IconProps } from '../types';
 
 export const ${iconComponentName}: FC<IconProps> = ({
-  size = 16,
+  size = ${size} | 16,
   color = '',
   className,
 }) => {
