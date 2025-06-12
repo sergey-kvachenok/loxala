@@ -1,13 +1,10 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
 
 # Get icon name, size and color from arguments
 ICON_NAME=$1
 ICON_SIZE=${2:-16}
 ICON_COLOR=${3:-"''"}
-
-ERROR_ICON=❌
-SUCCESS_ICON=✅
-CONGRATS_ICON=🎉
 
 if [ -z "$ICON_NAME" ]
 then

@@ -1,8 +1,6 @@
-ICON_NAME=$1
+source "$(dirname "$0")/common.sh"
 
-ERROR_ICON=❌
-SUCCESS_ICON=✅
-CONGRATS_ICON=🎉
+ICON_NAME=$1
 
 # Check if icon name is provided
 if [ -z "$ICON_NAME" ]

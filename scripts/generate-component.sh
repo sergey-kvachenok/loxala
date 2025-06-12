@@ -1,9 +1,7 @@
 #! /bin/bash
-DEFAULT_COMPONENT_PATH="/shared/ui/components"
+source "$(dirname "$0")/common.sh"
 
-ERROR_ICON=❌
-SUCCESS_ICON=✅
-CONGRATS_ICON=🎉
+DEFAULT_COMPONENT_PATH="/shared/ui/components"
 
 COMPONENT_NAME=$1
 COMPONENT_PATH="../src/${2:-$DEFAULT_COMPONENT_PATH}"
