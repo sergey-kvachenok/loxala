@@ -1,4 +1,6 @@
-export const ItemA = () => {
+import { createFileRoute } from '@tanstack/react-router';
+
+const ItemA = () => {
   return (
     <div className="h-screen flex items-center justify-center">
       <div className="text-center">
@@ -7,3 +9,7 @@ export const ItemA = () => {
     </div>
   );
 };
+
+export const Route = createFileRoute('/item-a')({
+  component: ItemA,
+});

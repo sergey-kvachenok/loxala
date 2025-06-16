@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import { LoxalaLogo, HamburgerIcon } from '@/shared/ui/icons';
 import { MobileMenu } from '@/widgets/Navbar/MobileMenu';
 import type { MenuItems } from './types';
