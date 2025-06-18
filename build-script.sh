@@ -17,6 +17,17 @@ INSERT_CONTENT="
 	</Directory>
 "
 
+HTACCESS_CONTENT='
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+'
+
 # --- Update and Install System Dependencies ---
 echo "--- Updating system packages and installing dependencies ---"
 
@@ -88,6 +99,11 @@ echo "Modifying AllowOverride setting in $APACHE_CONFIG_FILE..."
 # This ensures it's inserted BEFORE </VirtualHost>
 sudo awk -v insert="$INSERT_CONTENT" '/<\/VirtualHost>/ { print insert } { print }' "$APACHE_CONFIG_FILE" > /tmp/000-default.conf.new
 sudo mv /tmp/000-default.conf.new "$APACHE_CONFIG_FILE"
+
+echo "Creating .htaccess for SPA routing using tee..."
+sudo tee /var/www/html/.htaccess > /dev/null <<EOF
+$HTACCESS_CONTENT
+EOF
 
 echo "Verifying changes..."
 if grep -q "AllowOverride All" "$APACHE_CONFIG_FILE"; then
